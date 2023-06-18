@@ -1,4 +1,184 @@
-hello world!
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHEER Project Page</title>
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap-4.0.0.css" rel="stylesheet">
+</head>
 
+<body>
+    <div id="page_container">
+        <header>
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="text-center">Anonymous website</h5>
+                            <h2 class="text-center">CHEER: End-to-End Instance Aware Human-Chair Interactions Recovery
+                                </h1>
+                                <p class="text-center">&nbsp;</p>
+                                <h6 class="text-center">Anonymous Submission</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
 
+            <div class="container">
+                <h2>&nbsp;</h2>
+                <div class="row">
+                    <div class="col-lg-14 col-md-14 col-sm-14 text-center offset-xl-0 col-xl-12"> <img
+                            src="assets/dataset.png" width="950" alt="" />
+                        <p> Fig 1.&nbsp; We contribute the CHEER dataset, a collection of high-fidelity scans capturing
+                            human-chair interactions, and present a methodology for instance-aware reconstruction.</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <p>&nbsp;</p>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+                            <h2>Abstract</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
+                            <p class="text-left"><em>
+                                    In real-world scenarios, accurately reconstructing 3D models of human-object
+                                    interactions is a complex task. Though existing methods can reconstruct humans and
+                                    chairs separately with reasonable success, they struggle when these two elements
+                                    interact closely, due to severe occlusions and unseen contact-surface deformations.
+                                    To address these challenges, we propose CHEER, an innovative end-to-end methodology
+                                    for reconstructing human-chair interactions with learned continuous contact
+                                    deformations from sparse views. To enable this, we first capture a comprehensive 3D
+                                    scan dataset of clothed humans sitting on various chairs, resulting in 4700 scans
+                                    that are not labeled into two separated scans. Then we curate another synthetic
+                                    dataset by placing individual clothed human scans and chair scans together. We
+                                    employ a semi-supervised learning technique to train CHEER on the captured unlabeled
+                                    scans and synthetic scans. This can not only allow us to generally reconstruct
+                                    instance-aware implicit functions for humans and chairs, but also learn continuous
+                                    reconstruction with soft deformations on the contact surfaces for occluded regions.
+                                    Our extensive experiments indicate that our method can successfully reconstruct
+                                    accurate human-chair interactions in one forward pass, even with soft contact,
+                                    using limited view inputs. This research marks a significant stride in the field of
+                                    3D interaction reconstruction. The code and data will be public for research
+                                    purposes.
+                                </em></p>
+                            <p class="text-left">&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="container">
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <h2>Overview</h2>
+                        <div class="col-lg-14 col-md-14 col-sm-14 text-center offset-xl-0 col-xl-12"> <img
+                            src="assets/pipeline.jpg" width="950" alt="" />
+                        </div>
+
+                        <p class="text-justify">  </p>
+                        <p class="text-justify"> Fig 2.&nbsp;   Illustration of the overview. (a) presents the synthetic data augmentation approach. 
+                            For a realistic scan mesh U<sub>q</sub> in our CHEER dataset, we will sample a human body scan H<sub>p</sub> from the THuman dataset and a chair scan C to generate a training triplet. 
+                            (b) demonstrates our semi-supervision learning approach. It can be indicated that the three members in the training triplet provide different guidance and benefit from each other. 
+                            For the legend, blue and pink refer to the human mesh and the chair mesh, respectively. Then purple and red refer to their union and intersection. The diagonal stripe denotes the prediction results, and the solid color denotes the GT. 
+                            (c) is our benchmark CHEER net, which given sparse view images as input to produce instance-level human-chair recovery via an end-to-end strategy.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="row">
+                    <div class="col-lg-12 mb-4 mt-2 text-center">
+                        <h2>Demo Video</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+                    <video controls="controls" width="1024" height="576">
+                        <source src="./assets/supp_video.mp4" type="video/mp4">
+                    </video>
+                    <p>&nbsp;</p>
+                </div>
+                <hr>
+                <!-- <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Static Scenes</h2>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center col-xl-12">
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_musk.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_thor.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Dynamic Scenes </h2>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center col-xl-12">
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_zzr_cap.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_zzr_iron.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_jds_hm.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_jds_hq.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_sjx_mf.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+        <video width="" height="450"  muted autoplay="autoplay" loop="loop">
+          <source src="assets/video_sjx_sher.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+      </div> -->
+            </div>
+            <hr>
+
+            <div class="row"> </div>
+    </div>
+    </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap-4.0.0.js"></script>
+    <style>
+        .myimg {
+            vertical-align: top;
+        }
+    </style>
+</body>
+
+</html>
